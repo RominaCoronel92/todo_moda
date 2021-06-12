@@ -32,16 +32,30 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         jMenu1 = new javax.swing.JMenu();
+        jMenuBar2 = new javax.swing.JMenuBar();
+        jMenu2 = new javax.swing.JMenu();
+        jMenu3 = new javax.swing.JMenu();
         VentanaPrincipal = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
-        jProductos = new javax.swing.JMenu();
-        jProveedores = new javax.swing.JMenu();
+        jVer = new javax.swing.JMenu();
+        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuItem4 = new javax.swing.JMenuItem();
         jFacturacion = new javax.swing.JMenu();
+        MPedidos = new javax.swing.JMenu();
+        jProductos = new javax.swing.JMenu();
+        jMenuItem5 = new javax.swing.JMenuItem();
+        jMenuItem6 = new javax.swing.JMenuItem();
 
         jMenu1.setText("jMenu1");
+
+        jMenu2.setText("File");
+        jMenuBar2.add(jMenu2);
+
+        jMenu3.setText("Edit");
+        jMenuBar2.add(jMenu3);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -49,7 +63,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         VentanaPrincipal.setLayout(VentanaPrincipalLayout);
         VentanaPrincipalLayout.setHorizontalGroup(
             VentanaPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 528, Short.MAX_VALUE)
+            .addGap(0, 668, Short.MAX_VALUE)
         );
         VentanaPrincipalLayout.setVerticalGroup(
             VentanaPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -80,6 +94,36 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu);
 
+        jVer.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jVer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/proveedores.png"))); // NOI18N
+        jVer.setText("PROVEEDORES");
+
+        jMenuItem3.setText("Agregar");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
+        jVer.add(jMenuItem3);
+
+        jMenuItem4.setText("Ver");
+        jVer.add(jMenuItem4);
+
+        jMenuBar1.add(jVer);
+
+        jFacturacion.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jFacturacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ventas.png"))); // NOI18N
+        jFacturacion.setText("FACTURACIÓN");
+        jMenuBar1.add(jFacturacion);
+
+        MPedidos.setText("PEDIDOS");
+        MPedidos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MPedidosActionPerformed(evt);
+            }
+        });
+        jMenuBar1.add(MPedidos);
+
         jProductos.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jProductos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/productos.png"))); // NOI18N
         jProductos.setText("PRODUCTOS");
@@ -88,17 +132,19 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 jProductosActionPerformed(evt);
             }
         });
+
+        jMenuItem5.setText("Agregar ");
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem5ActionPerformed(evt);
+            }
+        });
+        jProductos.add(jMenuItem5);
+
+        jMenuItem6.setText("Listado");
+        jProductos.add(jMenuItem6);
+
         jMenuBar1.add(jProductos);
-
-        jProveedores.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jProveedores.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/proveedores.png"))); // NOI18N
-        jProveedores.setText("PROVEEDORES");
-        jMenuBar1.add(jProveedores);
-
-        jFacturacion.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jFacturacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ventas.png"))); // NOI18N
-        jFacturacion.setText("FACTURACIÓN");
-        jMenuBar1.add(jFacturacion);
 
         setJMenuBar(jMenuBar1);
 
@@ -130,6 +176,24 @@ public class MenuPrincipal extends javax.swing.JFrame {
         pf.setVisible(true);
         CentrarVentana(pf);
     }//GEN-LAST:event_jProductosActionPerformed
+
+    private void MPedidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MPedidosActionPerformed
+        ProductosForm ped = new ProductosForm();
+        VentanaPrincipal.add(ped);
+        ped.setVisible(true);
+       // CentrarVentana(ped);
+    }//GEN-LAST:event_MPedidosActionPerformed
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+         ProductosForm prov = new ProductosForm();
+        VentanaPrincipal.add(prov);
+        prov.setVisible(true);
+        CentrarVentana(prov);
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     void CentrarVentana (JInternalFrame frame){
         VentanaPrincipal.add(frame);
@@ -174,14 +238,22 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu MPedidos;
     private javax.swing.JDesktopPane VentanaPrincipal;
     private javax.swing.JMenu jFacturacion;
     private javax.swing.JMenu jMenu;
     private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenu jProductos;
-    private javax.swing.JMenu jProveedores;
+    private javax.swing.JMenu jVer;
     // End of variables declaration//GEN-END:variables
 }
