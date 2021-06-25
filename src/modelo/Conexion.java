@@ -14,6 +14,7 @@ public class Conexion {
     public ResultSet resultado;
 
     public void ConectarBasedeDatos() {
+    	
         try {
             final String Controlador = "com.mysql.jdbc.Driver";
             Class.forName(Controlador);
