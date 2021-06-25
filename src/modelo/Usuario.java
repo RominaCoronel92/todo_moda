@@ -14,6 +14,7 @@ public class Usuario {
         this.id = id;
         this.usuario = usuario;
         this.dni = dni;
+
     }
 
     public int getId() {
